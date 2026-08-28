@@ -1,512 +1,408 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-<link rel="shortcut icon" href="myIcon.ico">
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Yuntao Du, Du Yuntao, 杜云涛, Shandong University, multimodal learning, large multimodal models, LLM agents, transfer learning">
+  <meta name="description" content="Yuntao Du is an Associate Researcher and Master's Supervisor at Shandong University. His research focuses on multimodal learning, large multimodal models, LLM agents, and transfer learning.">
+  <meta name="google-site-verification" content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg">
+  <link rel="shortcut icon" href="myIcon.ico">
+  <title>Yuntao Du | Shandong University</title>
+  <style>
+    :root {
+      --ink: #20242b;
+      --muted: #65707f;
+      --accent: #8b1e2d;
+      --accent-soft: #f8edef;
+      --line: #e5e8ec;
+      --paper: #ffffff;
+      --canvas: #f5f6f8;
+      --link: #195aa6;
+      --max-width: 1060px;
+    }
 
-<meta name="keywords" content="Yuntao Du, Shandong University"> 
-<meta name="description" content="Yuntao Du's home page">
-<meta name="google-site-verification" content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg" />
-<meta name="google-site-verification" content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css">
-<title>Yuntao Du's homepage</title>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-87320911-1', 'auto');
-  ga('send', 'pageview');
-<style>
-  .left-align {
-    text-align: left;
-  }
-</style>
-	
-</script>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: Arial, "Helvetica Neue", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 28px auto;
+      padding: 42px 54px 30px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 8px 28px rgba(20, 28, 40, .06);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 190px;
+      gap: 38px;
+      align-items: center;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 { margin: 0 0 8px; font-size: 2.35rem; line-height: 1.15; letter-spacing: -.02em; }
+    h1 .cn { margin-left: 12px; font-family: "STKaiti", "KaiTi", serif; font-weight: 500; }
+    .role { margin: 0 0 12px; color: var(--accent); font-size: 1.08rem; font-weight: 700; }
+    .affiliation, .contact { margin: 5px 0; }
+    .profile-photo {
+      width: 180px;
+      height: 220px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #eef0f3;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      padding: 18px 0 2px;
+      font-size: .94rem;
+      font-weight: 700;
+    }
+    nav a { color: #424b58; }
+    section { padding-top: 24px; }
+    h2 {
+      margin: 0 0 14px;
+      padding-bottom: 7px;
+      color: #2c3440;
+      border-bottom: 2px solid var(--accent);
+      font-size: 1.32rem;
+      letter-spacing: .01em;
+    }
+    h3 { margin: 20px 0 8px; font-size: 1.05rem; }
+    p { margin: 8px 0; }
+    ul { margin: 8px 0; padding-left: 24px; }
+    li { margin: 5px 0; }
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 18px 0 4px;
+    }
+    .metric { padding: 14px 12px; text-align: center; background: #f7f8fa; border: 1px solid var(--line); border-radius: 8px; }
+    .metric strong { display: block; color: var(--accent); font-size: 1.32rem; line-height: 1.2; }
+    .metric span { color: var(--muted); font-size: .82rem; }
+    .notice { margin-top: 16px; padding: 13px 16px; border-left: 4px solid var(--accent); background: var(--accent-soft); }
+    .news { max-height: 330px; overflow: auto; padding-right: 10px; }
+    .news time { display: inline-block; min-width: 72px; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .pub-list { list-style: none; padding: 0; counter-reset: pubs; }
+    .pub-list li { position: relative; margin: 0; padding: 12px 0 12px 34px; border-bottom: 1px dashed var(--line); counter-increment: pubs; }
+    .pub-list li::before { content: counter(pubs) "."; position: absolute; left: 0; top: 12px; color: var(--muted); }
+    .pub-title { font-weight: 700; }
+    .authors { color: #3f4854; }
+    .venue { color: var(--accent); font-weight: 700; }
+    .tag { display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: .78rem; font-weight: 700; }
+    .links { white-space: nowrap; font-size: .9rem; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .compact li { margin: 7px 0; }
+    footer { margin-top: 34px; padding-top: 18px; color: var(--muted); border-top: 1px solid var(--line); text-align: center; font-size: .88rem; }
+    @media (max-width: 760px) {
+      .page { width: 100%; margin: 0; padding: 26px 20px; border: 0; border-radius: 0; }
+      .hero { grid-template-columns: 1fr; }
+      .profile-photo { grid-row: 1; width: 150px; height: 184px; }
+      .highlights { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; gap: 0; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
-<div id="layout-content" style="margin-top:25px">
-<table>
-	<tbody>
-		<tr>
-			<td width="670">
-				<div id="toptitle">					
-					<h1><font face="Arial"> Yuntao Du </font></h1>  <h1><font face="楷体"> 杜云涛 </font></h1>
-				</div>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <h1>Yuntao Du <span class="cn">杜云涛</span></h1>
+        <p class="role">Associate Researcher · Master's Supervisor</p>
+        <p class="affiliation">
+          <a href="https://cfair.sdu.edu.cn/" target="_blank" rel="noopener">Joint SDU–NTU Centre for Artificial Intelligence Research (C-FAIR)</a><br>
+          <a href="https://www.sc.sdu.edu.cn/" target="_blank" rel="noopener">School of Software, Shandong University</a><br>
+          Jinan, Shandong, China
+        </p>
+        <p class="contact">
+          Email: <a href="mailto:yuntaodu@sdu.edu.cn">yuntaodu@sdu.edu.cn</a> &nbsp;·&nbsp;
+          <a href="https://scholar.google.com/citations?user=1ogwTXkAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a> &nbsp;·&nbsp;
+          <a href="https://faculty.sdu.edu.cn/duyuntao1/zh_CN/index.htm" target="_blank" rel="noopener">SDU Profile</a>
+        </p>
+      </div>
+      <img class="profile-photo" src="https://yuntaodu.github.io/yuntaodu.jpg" alt="Portrait of Yuntao Du">
+    </header>
 
-				<h3><font face="Arial"> Associate Researcher </font></h3>
-				<p><font face="Arial"> 
-					Joint SDU-NTU Centre for Artificial Intelligence Research & School of Software <br>
-					<a href="https://www.sc.sdu.edu.cn/" target="_blank"> Shandong University</a> <br>
-					Jinan, China <br>
-					<br>
-					Email: <a href="duyuntao@bigai.ai">yuntaodu@sdu.edu.cn</a> <br>
-				</font></p>
-			</td>
-			<td>
-				<img src="yuntaodu.jpg" border="0" width="180"><br>
-			</td>
-		</tr><tr>
-	</tr></tbody>
-</table>
+    <nav aria-label="Section navigation">
+      <a href="#about">About</a>
+      <a href="#recruitment">Recruitment</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#students">Students</a>
+      <a href="#service">Service</a>
+    </nav>
 
-<h2><font face="Arial"> About </font></h2>
-<p class="left-align";>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am an Associate Researcher and Master's Supervisor at the Joint SDU–NTU Centre for Artificial Intelligence Research and the School of Software, Shandong University. I received my B.Eng. degree from Northeastern University in 2018 and my Ph.D. degree from Nanjing University in 2023. During my doctoral study, I interned at Microsoft Research Asia. From July 2023 to February 2025, I worked as a Research Scientist at the Beijing Institute for General Artificial Intelligence (BIGAI), where I also served as a joint Ph.D. supervisor. I joined Shandong University in February 2025.
+      </p>
+      <p>
+        My research focuses on <strong>multimodal learning</strong>, <strong>large multimodal models</strong>, <strong>LLM agents</strong>, and <strong>transfer learning</strong>. I am particularly interested in multimodal knowledge cognition and evolution, trustworthy and efficient multimodal reasoning, repository-level code agents, multi-agent systems, domain adaptation, and test-time adaptation.
+      </p>
+      <p>
+        I have published more than 30 papers, including 12 first-author or corresponding-author papers in CCF-A conferences or JCR Q1 journals such as ICML, ICLR, NeurIPS, CVPR, and AAAI. These works include two oral papers and one spotlight paper. My publications have received more than 1,800 Google Scholar citations; three papers have each received more than 250 citations, and AdaRNN has received more than 500 citations and was recognized by Paper Digest as one of the most influential CIKM 2021 papers.
+      </p>
+      <!-- <div class="highlights" aria-label="Research highlights">
+        <div class="metric"><strong>30+</strong><span>Publications</span></div>
+        <div class="metric"><strong>1,800+</strong><span>Google Scholar citations</span></div>
+        <div class="metric"><strong>2 Oral</strong><span>AAAI papers</span></div>
+        <div class="metric"><strong>1 Spotlight</strong><span>NeurIPS paper</span></div>
+      </div> -->
+    </section>
 
-    Currently, I am  working as an Associate Researcher in the Joint SDU-NTU Centre for Artificial Intelligence Research at Shandong University. 
-    Before that, I was a research scientist at the Beijing Institute for General Artificial Intelligence (BIGAI) from 2023~2025. 
-    I got a Ph.D degree from  Nanjing University in June 2023. I was a member of
-    <a href = "http://iip.nju.edu.cn/index.php/%E9%A6%96%E9%A1%B5" target="_blank" style= "color:blue; text-decoration:none;" >IIP Group</a>,
-    led by a professor
-    <a href = "https://cs.nju.edu.cn/58/06/c2639a153606/page.htm" target="_blank" style= "color:blue; text-decoration:none;" >Chongjun Wang</a>. 
-    Before that, I received my B.Sc. degree from Northeastern University in June 2018. 
-    
-    <br> 
-    <br> 
-    
-    I have published more than thirty papers in top conferences and journals, including ICML, NeurIPS, ICLR, CVPR, ECCV, and TMLR. 
-    Google Scholar's total citation number is 1100, and one paper is selected as "paper digest most influential papers" in CIKM 2021.
-    <br> 
-    <!-- In September 2018, I was admitted to study for a Ph.D degree at Nanjing University under the supervision of Prof. <a href = "https://cs.nju.edu.cn/58/06/c2639a153606/page.htm" target="_blank" style= "color:blue; text-decoration:none;" >Chongjun Wang</a> without entrance examination, respectively. -->
-    <br>
-    I am working on multimodal understanding, reasoning, and new knowledge learning. In particular, I'm interested in building models/agents that can generalize well and learn continously in various reasoning and multimodal tasks. Some of my research topic could be found below: 
-    <ul>
-        <li> <b>Large language model</b>: RAG, Knowledge and reasoning
-	      <li> <b>Large multimodal model</b>:  Efficient training and inference,   knowledge editing, model evaluation
-        <li> <b>LLM Agent</b>:    Multi-agent system; Agent Applications
-        <li> <b>Transfer Learning & Weakly supervised learning </b>:   domain adaptation, test-time adaptation, semi-supervised learning, noisy-label learning 
-    </ul>
-    
-    <p style="color: red;"> <strong> I am looking for self-motivated students. If interested, you are welcome to contact me.
-        </strong></p>
-      
-    <p style="color: red;"> <strong> I am open to collaborating with the field of academia and industry. If interested, you are welcome to contact me.
-        </strong></p>
+    <section id="recruitment">
+      <h2>Recruitment</h2>
+      <div class="notice">
+         <p>
+        <strong>Prospective master students:</strong> My 2026 master's positions are full. I expect to recruit 1–2 master's students for 2027 and 3–4 undergraduate research assistants. 
+        </p>
+        <p>
+         <strong>Prospective undergraduate students:</strong> Undergraduate applicants are generally expected to rank in the top 20% of their cohort; this requirement may be relaxed for students with outstanding programming skills.
+        </p>
+      </div>
+      <p>
+        Our group maintains close collaborations with research teams at Nanjing University, LMU Munich, Nanjing University of Posts and Telecommunications, Shanghai Artificial Intelligence Laboratory, and other institutions. Students interested in multimodal learning, large multimodal models, and LLM agents are welcome to email me with a CV. Academic and industrial collaborations are also welcome.
+      </p>
+    </section>
 
-</font></p>
-
-	
-<!--<font color="red">Currently, I am working on domain generalization for semantic segmentation and object detection. I am looking for undergraduate or master's students to engage in ongoing research papers. Don't hesitate to email me if you are interested.</font> <br><br>-->
-	
-<h2><font face="Arial"> News </h2>
-<font size = "3"></font>
-    <ul>
-	  <li> 2025.11 Three paper got accepted by <b>AAAI 2026, including two orals</b></li>
-    <li> 2025.09 One paper got accepted by <b>NeurIPS 2025 as Spotlight</b></li>
-	  <li> 2025.09 I will serve as <b>Area Chair in ICLR 2025</b> </li> 
-	  <li> 2025.08 One paper got accepted by <b>EMNLP 2025 Findings</b></li>
-      <li> 2025.05 One paper got accepted by <b>ICML 2025</b></li>
-      <li> 2025.03 One paper got accepted by <b>Neural Networks</b></li>
-      <li> <p style="color: red;">2025.02  <strong> I have joined Shandong University as an Associate Researcher in C-FAIR.  </strong></p>
-      </li>
-      <li> 2025.01 One paper got accepted by <b>ICLR 2025</b></li>
-      <li> 2024.12 One paper got accepted by <b>AAAI 2025</b></li>
-      <li> 2024.11 One paper got accepted by <b>Neurocomputing 2024</b></li>
-      <li> 2024.09 One paper got accepted by <b>NeurIPS 2024</b></li>
-      <li> 2024.08 One paper got accepted by <b>Neural Network</b></li>
-      <li> 2024.07 One paper got accepted by <b>ECCV 2024</b></li>
-      <!-- <li> 2024.03 One paper got accepted by <b>ICLR 2024 workshop</b></li> -->
-      <li> 2024.03 One paper got accepted by <b>CVPR 2024</b></li>
-      <!-- <li> 2024.02 Our survey on parameter-efficient fine-tuning for vision is on arXiv. Here is the <a href="https://github.com/synbol/Awesome-Parameter-Efficient-Transfer-Learning" target="_blank" style= "color:blue; text-decoration:none;">github link</a> </li> -->
-      <li> 2023.10 One paper got accepted by <strong>Machine Learning Journal</strong>
-      <li> 2023.03 One paper got accepted by <strong>Transactions on Machine Learning Research (TMLR) </strong>
-      <!-- <li> 2023.01 One paper got accepted by <strong>SDM 2023 </strong> -->
-<!--         <li> 2022.12 One paper got accepted by <strong>AAAI 2023</strong> -->
-<!--         <li> 2022.06 One paper got accepted by <strong>ECML-PKDD 2022</strong>
-        <li> 2021.12 One paper got accepted by <strong>AAAI 2022</strong> -->
-        <!-- <li> 2021.09 I have been awarded a student travel grant of CIKM 2021</li> -->
-        <!-- <li> 2021.09 I have been selected as a PC member of AAAI 2022</li> -->
-        <!-- <li> 2021.08 Two papers got accepted by <strong> CIKM 2021 </strong></li>
-        <li> 2021.05 One paper got accepted by <strong> ICMR 2021 </strong></li>
-        <li> 2021.03 One paper got accepted by <strong> IDA journal 2021 </strong></li>
-        <li> 2021.01 Four papers got accepted by <strong> DASFAA 2021 </strong></li> -->
-      <!--   <li> 2020.06 One paper got accepted by <strong> ECML-PKDD 2020 </strong></li> -->
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><time>2026.08</time> I will serve as an Area Chair for ICLR 2026.</li>
+        <li><time>2026.07</time> Two papers were accepted by ACM Multimedia 2026.</li>
+        <li><time>2026.07</time> One paper was accepted by WISA 2026.</li>
+        <li><time>2026.06</time> One paper was accepted by ECCV 2026.</li>
+        <li><time>2026.05</time> Three papers were accepted by IJCV, IEEE Transactions on Evolutionary Computation, and ESWC, respectively.</li>
+        <li><time>2026.05</time> Two papers were accepted by ICML 2026.</li>
+        <li><time>2026.04</time> Two papers were accepted by ACL 2026 Findings.</li>
+        <li><time>2026.03</time> One paper was accepted by IJCNN 2026.</li>
+        <li><time>2026.02</time> Two papers were accepted by Information Fusion.</li>
+        <li><time>2026.02</time> Two papers were accepted by CVPR 2026 (one main-track and one findings paper).</li>
+        <li><time>2026.01</time> Two papers were accepted by ICLR 2026.</li>
+        <li><time>2025.12</time> Three student teams won first, second, and third national prizes in the Global Campus AI Algorithm Elite Competition.</li>
+        <li><time>2025.11</time> Three papers were accepted by AAAI 2026, including two oral papers.</li>
+        <li><time>2025.09</time> RepoMaster was accepted by NeurIPS 2025 as a Spotlight paper.</li>
+        <li><time>2025.08</time> One paper was accepted by EMNLP 2025 Findings.</li>
+        <li><time>2025.05</time> One paper was accepted by ICML 2025.</li>
+        <li><time>2025.02</time> I joined Shandong University as an Associate Researcher at C-FAIR.</li>
       </ul>
+    </section>
 
-
-
-<h2><font face="Arial"> Preprint </font></h2>
-<font size = "3">
-<ul>
-
-  <li> 
-	<p>
-	<strong> MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models</strong>  
-          <a href="https://arxiv.org/pdf/2508.05557" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-	   </p> Kailin Jiang, <b>Yuntao Du</b>*📧, Ning Jiang, Yuchen Ren, Yuchen Li, Yifan Gao, Jinhe Bi, Yunpu Ma, Qingqing Liu, Xianhao Wang, Yifan Jia, Hongbo Jiang, Yaocong Hu, Bin Li, Lei Liu
-  </li>	
-  <li> 
-	<p>
-	<strong> KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Augmentations and Constraints</strong>  
-          <a href="https://arxiv.org/pdf/2508.05557" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-	   </p> Kailin Jiang, Hongbo Jiang, Ning Jiang, Zhi Gao, Jinhe Bi, Yuchen Ren, Bin Li, <b>Yuntao Du</b>, Lei Liu, Qing Li
-  </li>	
-  <li> 
-	<p>
-	<strong> Can Visual Input Be Compressed? A Visual Token Compression Benchmark for Large Multimodal Models</strong>  
-          <a href="https://arxiv.org/pdf/2508.05557" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-	   </p> Tianfan Peng*, <b>Yuntao Du</b>*📧, Pengzhou Ji, Shijie Dong, Kailin Jiang, Mingchuan Ma, Yijun Tian, Jinhe Bi, Qian Li, Wei Du, Feng Xiao, Lizhen Cui
-  </li>	
-	<li> 
-	<p>
-	<strong> When Large Multimodal Models Confront Evolving Knowledge:Challenges and Pathways</strong>  
-          <a href="https://arxiv.org/pdf/2508.05557" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-	   </p>
-	  Kailin Jiang*, <b>Yuntao Du</b>*, Yukai Ding, Yuchen Ren, Ning Jiang, Zhi Gao, Zilong Zheng, Lei Liu, Bin Li, Qing Li
-   </li>	
-
-  <li> 
-	<p>
-	<strong> MV-Debate: Multi-view Agent Debate with Dynamic Reflection Gating for Multimodal Harmful Content Detection in Social Media</strong>  
-          <a href="https://arxiv.org/pdf/2508.05557" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-	   </p>
-	  Rui Lu, Jinhe Bi, Yunpu Ma, Feng Xiao, <b>Yuntao Du</b>📧, Yijun Tian📧
-   </li>	
-   
-    <li>
-    <p>
-        <strong>Parameter-Efficient Fine-Tuning for Pre-Trained Vision Models: A Survey and Benchmark </strong>  
-        <a href="https://arxiv.org/abs/2402.02242" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-    </p>
-    <p>
-        Yi Xin, Jianjiang Yang, Siqi Luo, <b>Yuntao Du</b>, Qi Qin, Kangrui Cen, Yangfan He, Bin Fu, Xiaokang Yang, Guangtao Zhai, Ming-Hsuan Yang, Xiaohong Liu
-    </p>
-    </li>
-</ul>
-
-
-<h2><font face="Arial"> Selected Publications </font></h2>
-<font size = "2"></font>
-<p><font face="Arial"><a href="https://scholar.google.com/citations?user=1ogwTXkAAAAJ&hl=zh-CN">[Google Scholar]</a></font></p> 
-	
-<ul>
-  <li> 
-	<p>
-	<strong> Benchmarking Multimodal Knowledge Conflict for Large Multimodal Models.</strong>  
-          <a href="https://mllmkcbench.github.io/" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-	   </p>
-	  Yifan Jia*, <b>Yuntao Du</b>*📧, Kailin Jiang*, Yuyang Liang, Qihan Ren, Yi Xin, Rui Yang, Fenze Feng, Mingcai Chen, Hengyang Lu, Haozhe Wang, Xiaoye Qu, Dongrui Liu.
-     <p>
-      <strong>   <p style="color: red;">AAAI 2026 (Orals, CCF A)</p>   </strong>
-    </p>
-  </li>	
-  <li> 
-	<p>
-	<strong> GitTaskBench: A Benchmark for Code Agents Solving Real-World Tasks Through Code Repository Leveraging</strong>  
-          <a href="https://arxiv.org/abs/2508.18993" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-	   </p>
-	  Ziyi Ni, Huacan Wang, Shuo Zhang, Shuo Lu, Ziyang He, Wang You, Zhenheng Tang, Bill Sun, Hongzhang Liu, Sen Hu, Ronghao Chen, Bo Li, Xin Li, Chen Hu, Binxing Jiao, Daxin Jiang, <b>Yuntao Du📧</b>, Pin Lyu📧
-   <p>
-      <strong>   <p style="color: red;">AAAI 2026 (Orals, CCF A)</p>   </strong>
-    </p>
-  </li>	
-
-  <li> 
-	<p>
-	<strong> RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving.</strong>  
-          <a href="https://arxiv.org/abs/2505.21577" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-	</p>
-	<p>
-	   Huacan Wang, Ziyi Ni, Shuo Zhang, Shuo Lu, Sen Hu, Ziyang He, Chen Hu, Jiaye Lin, Yifu Guo, <b>Yuntao Du</b>📧, Pin Ly📧
-    </p>
-    <p>
-      <strong>   <p style="color: red;">NeurIPS 2025 (Spotlight, CCF A)</p>   </strong>
-    </p> 
-   </li>	
-	<li>
-    <p>
-      <strong>	Learning SQL Like a Human: Structure-Aware Curriculum Learning for Text-to-SQL Generation. </strong> 
-      <a href="" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a> 
-    <p>
-	  Xiaohu Zhu, Qian Li, Lizhen Cui, <b>Yuntao Du</b>
-    </p>
-    <p>
-      <strong>   <p style="color: red;">EMNLP 2025 (Findings, CCF B)</p>   </strong>
-    </p>
-</li>
-
-  <li>
-    <p>
-      <strong>	Test-Time Selective Adaptation for Uni-Modal Distribution Shift in Multi-Modal Data. </strong> 
-      <a href="https://openreview.net/pdf?id=6EZMWeV5sH" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a> 
-    <p>
-      MingCai Chen, Baoming Zhang, Zongbo Han, Wenyu Jiang, Yanmeng Wang, Shuai Feng, <b>Yuntao Du📧</b>, Bingkun BAO📧
-    </p>
-    <p>
-      <strong>   <p style="color: red;">ICML 2025 (CCF A, Equal Corresponding Author)</p>   </strong>
-    </p>
-</li>
-
-
-  <li>
-    <p>
-      <strong>	MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge. </strong>
-      <a href="https://openreview.net/forum?id=v8qABSeeKO&noteId=iGPriZPvEo" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-      <a href="https://mmke-bench-iclr.github.io/" target="_blank" style= "color:blue; text-decoration:none;">[WebPage]</a>
-    <p>
-      <b>Yuntao Du</b>, Kailin Jiang, Zhi Gao, Chenrui Shi, Zilong Zheng, Siyuan Qi, Qing Li
-    </p>
-    <p>
-     <strong>  <p style="color: red;">ICLR 2025 (清华A类) </p>  </strong> 
-    </p>
-</li>
-
-<li>
-    <p>
-      <strong>Robust Logit Adjustment for Learning with Long-Tailed Noisy Data. </strong> 
-      <a href="https://ojs.aaai.org/index.php/AAAI/article/view/33738" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-    <p>
-      MingCai Chen, <b>Yuntao Du</b>, Wenyu Jiang, Baoming Zhang, Shuai Feng, Yi Xin, Chongjun Wang
-    </p>
-    <p>
-      <strong> <p style="color: red;">AAAI  2025 (CCF A)  </p>  </strong>
-    </p>
-</li>
-
-    <li>
-    <p>
-      <strong>V-PETL Bench: A Unified Visual Parameter-Efficient Transfer Learning Benchmark. </strong> 
-       <a href="https://openreview.net/pdf?id=yS1dUkQFnu" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-       <a href="https://v-petl-bench.github.io/" target="_blank" style= "color:blue; text-decoration:none;">[WebPage]</a>
-    <p>
-      Yi Xin*, Siqi Luo*, Xuyang Liu*, <b>Yuntao Du*</b>, Haodi Zhou, Xinyu Cheng, Christina Luoluo Lee, Junlong Du, Haozhe Wang, MingCai Chen, Ting Liu, Guimin Hu, Zhongwei Wan, Rongchao Zhang, Aoxue Li, Mingyang Yi, Xiaohong Liu
-    </p>
-    <p>
-      <strong>  <p style="color: red;">NeurIPS 2024 (CCF A, Equal first author) </p> </strong>  
-    </p>
-
-</li>
-    <li>
-        <p>
-          <strong>VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding. </strong> 
-          <a href="https://arxiv.org/abs/2403.11481" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-          <a href="https://videoagent.github.io/" target="_blank" style= "color:blue; text-decoration:none;">[WebPage]</a>
-          <a href="https://mp.weixin.qq.com/s/2gG9AUcTc_yutN8zZUGQKQ" target="_blank" style= "color:blue; text-decoration:none;">[机器之心中文报道]</a>
-        <p>
-          Yue Fan, Xiaojian Ma, Rujie Wu, <b>Yuntao Du</b>, Jiaqi Li, Zhi Gao, Qing Li
-        </p>
-        <p>
-          <strong> <p style="color: red;">ECCV 2024 (CCF B) </p> </strong>  
-        </p>
-    </li>
-
-    <li>
-        <p>
-          <strong>Multi-source Fully Test-Time Adaptation. </strong> 
-          <a href="https://www.sciencedirect.com/science/article/pii/S0893608024005859" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-        </p>
-        <p>
-          <b>Yuntao Du</b>, Siqi Luo, Yi Xin, MingCai Chen, Shuai Feng, Mujie Zhang, Chongjun Wang
-        </p>
-        <p>
-          <strong>  <p style="color: red;">Neural Network 2024 (JCR Q1, CCF B) </p> </strong>
-        </p>
-      </li>
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <p>
+        <a href="https://scholar.google.com/citations?user=1ogwTXkAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Complete publication list on Google Scholar</a>. * indicates equal contribution; 📧 indicates corresponding author.
+      </p>
+      <ol class="pub-list">
         <li>
-          <p>
-            <strong> CLOVA: A Closed-Loop Visual Assistant with Tool Usage and Update. </strong> 
-            <a href="https://arxiv.org/abs/2312.10908" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-            <a href="https://clova-tool.github.io" target="_blank" style= "color:blue; text-decoration:none;">[WebPage]</a>
-          <p>
-            Zhi Gao, <b>Yuntao Du</b>, Xintong Zhang, Xiaojian Ma, Wenjuan Han, Song-Chun Zhu, Qing Li
-          </p>
-          <p>
-            <strong> <p style="color: red;">CVPR 2024 (CCF A)</p>  </strong> 
-          </p>
+          <span class="pub-title">Can Visual Input Be Compressed? A Visual Input Token Compression Benchmark for Large Multimodal Models.</span>
+          <!-- <span class="links"><a href="https://doi.org/10.1145/3767308.3835379" target="_blank" rel="noopener">[DOI]</a></span><br> -->
+          <span class="authors">Tianfan Peng, Shijie Dong, Pengzhou Ji, Kailin Jiang, Mingchuan Ma, Yijun Tian, Jinhe Bi, Qian Li, Wei Du, Feng Xiao, Lizhen Cui, <strong>Yuntao Du</strong>📧.</span><br>
+          <span class="venue">ACM Multimedia 2026 (CCF-A)</span>
         </li>
-      <li>
-        <p>
-          <strong>Generation, augmentation, and alignment: A pseudo-source domain based method for source-free domain adaptation </strong>
-          <a href="https://arxiv.org/abs/2109.04015" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-        </p>
-        <p>
-          <b>Yuntao Du</b>, Haiyang Yang, Mingcai Chen, Juan Jiang, Hongtao Luo, and Chongjun Wang.
-        </p>
-        <p>
-          <strong> <p style="color: red;">Machine Learning (MLJ)  2023 (JCR Q1, CCF B)</p>  </strong>
-        </p>
-      </li>
-  
-      <li>
-        <p>
-          <strong>DSCR: Dual View based Symmetric Consistency Regularization for Semi-Supervised Domain Adaptation </strong>
-          <a href="https://openreview.net/pdf?id=WVwnccBJLz" target="_blank" style= "color:blue; text-decoration:none;">[PDF]</a>
-        </p>
-        <p>
-          <b>Yuntao Du</b>, Juan Jiang, Hongtao Luo, Haiyang Yang, Mingcai Chen, and Chongjun Wang.
-        </p>
-        <p>
-          <strong>  <p style="color: red;"> Transactions on Machine Learning Research (TMLR) 2023 </p> </strong>
-        </p>
-      </li>
-  
-      <li>
-        <p> 
-          <strong>Two Wrongs Don’t Make a Right: Combating Confirmation Bias in Learning with Label Noise</strong>
-          [<a href="https://arxiv.org/abs/2112.02960" target="_blank" style= "color:blue; text-decoration:none;">PDF</a>] 
-        </p>
-        <p>
-          Mingcai Chen, Hao Cheng, <b>Yuntao Du </b>, Ming Xu, Wenyu Jiang, Chongjun Wang
-        </p>
-        <p>
-          <strong><p style="color: red;"> AAAI 2023 (CCF A) </p> </strong>  
-        </p>
-      </li>
-      <li>
-        <p> 
-          <strong>InCo: Intermediate Prototype Contrast for Unsupervised Domain Adaptation</strong>
-          [<a href="https://link.springer.com/chapter/10.1007/978-3-031-26387-3_39" target="_blank" style= "color:blue; text-decoration:none;">PDF</a>] 
-        </p>
-        <p>
-          <b>Yuntao Du*</b>, Hongtao Luo*, Haiyang Yang, Juan Jiang, and Chongjun Wang
-        </p>
-        <p  style="color: red;">
-           <strong>ECML-PKDD 2022 (CCF B)</strong>
-        </p>
-      </li>
-  
-      <li>
-        <p> 
-          <strong> Semi-Supervised Learning with Multi-Head Co-Training</strong>
-          [<a href="https://arxiv.org/pdf/2107.04795" target="_blank" style= "color:blue; text-decoration:none;">PDF</a>] 
-          [<a href="https://github.com/chenmc1996/Multi-Head-Co-Training" target="_blank" style= "color:blue; text-decoration:none;">Code</a>] 
-        </p>
-        <p>
-          Mingcai Chen, <b>Yuntao Du </b>, Yi zhang, Shuwei Qian, and Chongjun Wang
-        </p>
-        <p style="color: red;">
-         <strong> AAAI 2022 (CCF A)</strong>
-        </p>
-      </li>
-  
-      <li>
-        <p> 
-          <strong>AdaRNN: Adaptive Learning and Forecasting of Time Series</strong>
-          [<a href="https://arxiv.org/abs/2108.04443" target="_blank" style= "color:blue; text-decoration:none;">PDF</a>] 
-          [<a href="https://github.com/jindongwang/transferlearning/tree/master/code/deep/adarnn" target="_blank" style= "color:blue; text-decoration:none;">Code</a>]
-          (<b>引用超300</b>, Rank 4th in CIKM 2021)  
-        </p>
-        <p>
-          <b>Yuntao Du </b>, Jindong Wang, Wenjie Feng, Sinno Pan, Tao Qin, Renjun Xu and Chongjun Wang
-        </p>
-        <p style="color: red;">
-          <strong>CIKM  2021 (CCF B)</strong> 
-       </p>
-      </li>
-  
-      <li>
-        <p> 
-          <strong>Adversarial Separation Network for Cross-Network Node Classification</strong>
-          [<a href="https://dl.acm.org/doi/10.1145/3459637.3482228" target="_blank" style= "color:blue; text-decoration:none;">PDF</a>] 
-          [<a href="https://github.com/yuntaodu/ASN" target="_blank" style= "color:blue; text-decoration:none;">Code</a>] 
-        </p>
-        <p>
-          Xiaowen Zhang *, <b>Yuntao Du *</b>, Rongbiao Xie and Chongjun Wang
-        </p>
-        <p style="color: red;">
-          <strong>CIKM 2021 (CCF B, Euqal first author)</strong> 
-        </p>
-      </li>
-
-      <!-- <li>
-        <p> 
-          <strong>Cross-domain error minimization for unsupervised domain adaptation</strong>
-        </p>
-        <p>
-          <b>Yuntao Du</b>, Yinghao Chen *, Fengli Cui *, Xiaowen Zhang, Chongjun Wang. (*, euqal contribution)
-        </p>
-        <p>
-          International Conference on Database Systems for Advanced Applications (<a href="http://dm.iis.sinica.edu.tw/DASFAA2021/" target="_blank" style= "color:blue; text-decoration:none;"><strong>DASFAA</strong></a>) 2021 [<a href="https://arxiv.org/abs/2106.15057" target="_blank" style= "color:blue; text-decoration:none;">PDF</a>] [<a href="https://github.com/yuntaodu/CDEM" target="_blank" style= "color:blue; text-decoration:none;">Code</a>] 
-        </p>
-      </li> -->
-
-      <li>
-          <p> 
-            <strong>Homogeneous Online Transfer Learning with Online Distribution Discrepancy Minimization</strong>
-            [<a href="https://arxiv.org/pdf/1912.13226.pdf" target="_blank" style= "color:blue; text-decoration:none;">PDF</a>] 
-            [<a href="https://github.com/yaoyueduzhen/HomOTL-ODDM" target="_blank" style= "color:blue; text-decoration:none;">Code</a>] 
-          </p>
-          <p>
-            <b>Yuntao Du</b>, Zhiwen Tan, Qian Chen, Yi Zhang, Chongjun Wang.
-          </p>
-          <p style="color: red;">
-            <strong>ECAI 2020 (CCF B)</strong>
-
-          </p>
+        <li>
+          <span class="pub-title">M3MAD-Bench: Multi-Dimensional Evaluation of Multi-Agent Debate Across Domains and Modalities.</span><br>
+          <span class="authors">Ao Li, Jinghui Zhang, Luyu Li, Yuxiang Duan, Lang Gao, Mingcai Chen, Weijun Qin, Shaopeng Li, Fengxian Ji, Ning Liu, Lizhen Cui, Xiuying Chen, <strong>Yuntao Du</strong>📧.</span><br>
+          <span class="venue">ACM Multimedia 2026 (CCF-A)</span>
         </li>
-	
-</ul>
-	
+        <li>
+          <span class="pub-title">Delineating Knowledge Boundaries for Honest Large Vision-Language Models.</span><br>
+          <span class="authors">Junru Song, Yimeng Hu, Yijing Chen, Huining Li, Qian Li, Lizhen Cui, <strong>Yuntao Du</strong>📧.</span><br>
+          <span class="venue">ECCV 2026 (CCF-B)</span>
+        </li>
+        <li>
+          <span class="pub-title">Parameter-Efficient Fine-Tuning for Pre-Trained Vision Models: A Survey and Benchmark.</span>
+          <span class="links"><a href="https://arxiv.org/abs/2402.02242" target="_blank" rel="noopener">[PDF]</a></span><br>
+          <span class="authors">Yi Xin, Jianjiang Yang, Siqi Luo, <strong>Yuntao Du</strong>, Qi Qin, Kangrui Cen, Yangfan He, Zhiwei Zhang, Bin Fu, Xiaokang Yang, Guangtao Zhai, Ming-Hsuan Yang, Xiaohong Liu.</span><br>
+          <span class="venue">International Journal of Computer Vision, 2026 (CCF-A)</span>
+        </li>
+        <li>
+          <span class="pub-title">MMKU-Bench: A Multimodal Update Benchmark for Diverse Visual Knowledge.</span><br>
+          <span class="authors">Baochen Fu*, <strong>Yuntao Du</strong>*, Cheng Chang, Baihao Jin, Wenzhi Deng, Muhao Xu, Hongmei Yan, Weiye Song, Yi Wan.</span><br>
+          <span class="venue">ICML 2026 (CCF-A)</span>
+        </li>
+        <li>
+          <span class="pub-title">KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls.</span><br>
+          <span class="authors">Kailin Jiang, Hongbo Jiang, Ning Jiang, Zhi Gao, Jinhe Bi, Yuchen Ren, Bin Li, <strong>Yuntao Du</strong>, Lei Liu, Qing Li.</span><br>
+          <span class="venue">ICML 2026 (CCF-A)</span>
+        </li>
+        <li>
+          <span class="pub-title">MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models.</span><br>
+          <span class="authors">Kailin Jiang*, Ning Jiang*, <strong>Yuntao Du</strong>, Yuchen Ren, Yuchen Li, Yifan Gao, Jinhe Bi, Yunpu Ma, Bin Li, Lei Liu, Qing Li.</span><br>
+          <span class="venue">ACL 2026 Findings (CCF-A)</span>
+        </li>
+        <li>
+          <span class="pub-title">VKG-QA: Visual Knowledge Graph-based Question Answer for Large Multimodal Models.</span><br>
+          <span class="authors"><strong>Yuntao Du</strong>, Yiming Wang, Renshuo Yuan, Jincheng Yue, Yijing Chen, Yue Fan, Bo Zhang, Qian Li, Lizhen Cui.</span><br>
+          <span class="venue">CVPR 2026 (CCF-A)</span>
+        </li>
+        <li>
+          <span class="pub-title">When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations.</span><br>
+          <span class="authors">Kailin Jiang*, <strong>Yuntao Du</strong>*, Yukai Ding, Yuchen Ren, Ning Jiang, Zhi Gao, Zilong Zheng, Lei Liu, Bin Li, Qing Li.</span><br>
+          <span class="venue">ICLR 2026</span>
+        </li>
+        <li>
+          <span class="pub-title">Benchmarking Multimodal Knowledge Conflict for Large Multimodal Models.</span>
+          <span class="links"><a href="https://mllmkcbench.github.io/" target="_blank" rel="noopener">[Project]</a></span><br>
+          <span class="authors">Yifan Jia, Kailin Jiang, Yuyang Liang, Qihan Ren, Yi Xin, Rui Yang, Fenze Feng, Mingcai Chen, Hengyang Lu, Haozhe Wang, Qian Li, Xiaoye Qu, Dongrui Liu, <strong>Yuntao Du</strong>📧.</span><br>
+          <span class="venue">AAAI 2026 (CCF-A)</span><span class="tag">Oral</span>
+        </li>
+        <li>
+          <span class="pub-title">GitTaskBench: A Benchmark for Code Agents Solving Real-World Tasks Through Code Repository Leveraging.</span>
+          <span class="links"><a href="https://arxiv.org/abs/2508.18993" target="_blank" rel="noopener">[PDF]</a></span><br>
+          <span class="authors">Ziyi Ni, Huacan Wang, Shuo Zhang, Shuo Lu, Ziyang He, Wang You, Zhenheng Tang, <strong>Yuntao Du</strong>📧, Sen Hu, Bo Li, Chen Hu, Binxing Jiao, Daxin Jiang, Pin Lyu.</span><br>
+          <span class="venue">AAAI 2026 (CCF-A)</span><span class="tag">Oral</span>
+        </li>
+        <li>
+          <span class="pub-title">RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving.</span>
+          <span class="links"><a href="https://arxiv.org/abs/2505.21577" target="_blank" rel="noopener">[PDF]</a></span><br>
+          <span class="authors">Huacan Wang, Ziyi Ni, Shuo Zhang, Shuo Lu, Sen Hu, Ziyang He, Chen Hu, Jiaye Lin, Yifu Guo, <strong>Yuntao Du</strong>📧, Pin Lyu📧.</span><br>
+          <span class="venue">NeurIPS 2025 (CCF-A)</span><span class="tag">Spotlight</span>
+        </li>
+        <li>
+          <span class="pub-title">Test-Time Selective Adaptation for Uni-Modal Distribution Shift in Multi-Modal Data.</span>
+          <span class="links"><a href="https://openreview.net/pdf?id=6EZMWeV5sH" target="_blank" rel="noopener">[PDF]</a></span><br>
+          <span class="authors">Mingcai Chen, Baoming Zhang, Zongbo Han, Wenyu Jiang, Yanmeng Wang, Shuai Feng, <strong>Yuntao Du</strong>📧, Bingkun Bao📧.</span><br>
+          <span class="venue">ICML 2025 (CCF-A, equal corresponding author)</span>
+        </li>
+        <li>
+          <span class="pub-title">MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge.</span>
+          <span class="links"><a href="https://openreview.net/forum?id=v8qABSeeKO" target="_blank" rel="noopener">[PDF]</a> <a href="https://mmke-bench-iclr.github.io/" target="_blank" rel="noopener">[Project]</a></span><br>
+          <span class="authors"><strong>Yuntao Du</strong>, Kailin Jiang, Zhi Gao, Chenrui Shi, Zilong Zheng, Siyuan Qi, Qing Li.</span><br>
+          <span class="venue">ICLR 2025</span>
+        </li>
+        <li>
+          <span class="pub-title">V-PETL Bench: A Unified Visual Parameter-Efficient Transfer Learning Benchmark.</span>
+          <span class="links"><a href="https://openreview.net/pdf?id=yS1dUkQFnu" target="_blank" rel="noopener">[PDF]</a> <a href="https://v-petl-bench.github.io/" target="_blank" rel="noopener">[Project]</a></span><br>
+          <span class="authors">Yi Xin*, Siqi Luo*, Xuyang Liu*, <strong>Yuntao Du</strong>*, et al.</span><br>
+          <span class="venue">NeurIPS 2024 (CCF-A, equal first author)</span>
+        </li>
+        <li>
+          <span class="pub-title">VideoAgent: A Memory-Augmented Multimodal Agent for Video Understanding.</span>
+          <span class="links"><a href="https://arxiv.org/abs/2403.11481" target="_blank" rel="noopener">[PDF]</a> <a href="https://videoagent.github.io/" target="_blank" rel="noopener">[Project]</a></span><br>
+          <span class="authors">Yue Fan, Xiaojian Ma, Rujie Wu, <strong>Yuntao Du</strong>, Jiaqi Li, Zhi Gao, Qing Li.</span><br>
+          <span class="venue">ECCV 2024 (CCF-B)</span>
+        </li>
+        <li>
+          <span class="pub-title">CLOVA: A Closed-Loop Visual Assistant with Tool Usage and Update.</span>
+          <span class="links"><a href="https://arxiv.org/abs/2312.10908" target="_blank" rel="noopener">[PDF]</a> <a href="https://clova-tool.github.io/" target="_blank" rel="noopener">[Project]</a></span><br>
+          <span class="authors">Zhi Gao, <strong>Yuntao Du</strong>, Xintong Zhang, Xiaojian Ma, Wenjuan Han, Song-Chun Zhu, Qing Li.</span><br>
+          <span class="venue">CVPR 2024 (CCF-A)</span>
+        </li>
+        <li>
+          <span class="pub-title">Multi-Source Fully Test-Time Adaptation.</span>
+          <span class="links"><a href="https://www.sciencedirect.com/science/article/pii/S0893608024005859" target="_blank" rel="noopener">[PDF]</a></span><br>
+          <span class="authors"><strong>Yuntao Du</strong>, Siqi Luo, Yi Xin, Mingcai Chen, Shuai Feng, Mujie Zhang, Chongjun Wang.</span><br>
+          <span class="venue">Neural Networks, 2025 (JCR Q1, CCF-B)</span>
+        </li>
+        <li>
+          <span class="pub-title">Generation, Augmentation, and Alignment: A Pseudo-Source Domain Based Method for Source-Free Domain Adaptation.</span>
+          <span class="links"><a href="https://arxiv.org/abs/2109.04015" target="_blank" rel="noopener">[PDF]</a></span><br>
+          <span class="authors"><strong>Yuntao Du</strong>, Haiyang Yang, Mingcai Chen, Juan Jiang, Hongtao Luo, Chongjun Wang.</span><br>
+          <span class="venue">Machine Learning, 2024 (JCR Q1, CCF-B)</span>
+        </li>
+        <li>
+          <span class="pub-title">AdaRNN: Adaptive Learning and Forecasting of Time Series.</span>
+          <span class="links"><a href="https://arxiv.org/abs/2108.04443" target="_blank" rel="noopener">[PDF]</a> <a href="https://github.com/jindongwang/transferlearning/tree/master/code/deep/adarnn" target="_blank" rel="noopener">[Code]</a></span><br>
+          <span class="authors"><strong>Yuntao Du</strong>, Jindong Wang, Wenjie Feng, Sinno Pan, Tao Qin, Renjun Xu, Chongjun Wang.</span><br>
+          <span class="venue">CIKM 2021 (CCF-B)</span><span class="tag">500+ citations</span>
+        </li>
+      </ol>
+    </section>
 
-	
-	
-<h2><font face="Arial"> Honors &amp; Awards </h2>
-	
-<ul style="list-style-type:none">
-<p style="line-height: 120%; margin-left: 0px; margin-top: 8pt; margin-bottom: 8pt;"> <font face="Arial" size="3">
+    <section id="projects">
+      <h2>Research Projects as Principal Investigator</h2>
+      <ul class="compact">
+        <li><strong>Mitigating Multimodal Factual Hallucinations under Cognitive Boundary Constraints</strong>, Young Scientists Fund of the National Natural Science Foundation of China (Category C), 2027–2029.</li>
+        <li><strong>Collaborative Decision-Making and Adaptive Task Planning for Industrial Agents</strong>, Shandong Provincial Natural Science Foundation Joint Fund, 2026–2029.</li>
+        <li><strong>Multi-Agent Reasoning Systems for Patrol Scenarios</strong>, CAAI–Lenovo Blue Sky Research Fund, 2026–2027.</li>
+        <li><strong>Efficient Inference for Large Multimodal Models</strong>, Shandong Provincial Natural Science Foundation Young Scholars Program, 2025–2028.</li>
+        <li><strong>Efficient Inference Algorithms for Large Multimodal Models</strong>, Key Laboratory Open Fund, 2025–2027.</li>
+      </ul>
+    </section>
 
-    <li>Outstanding Undergraduate Student Award, from NJU, China, May 2023</li>
-    <li>Student travel grant, CIKM 2021</li>
-    <li> First class scholarship of Yingcai, from NJU, October 2019,2020,2021,2022</li>
-    <!-- <li>Financial aid of ICML 2021, July, 2021</li> -->
-    <!--   <li>Star of tomorrow, from MSRA, China, September 2020</li> -->
-    <li>Outstanding Undergraduate Student Award, from NEU, China, May 2018</li>
-    <li>Meritorious Winner, in MCM/ICM 2017, March 2017</li>
-    <!-- <li>National Scholarship for Encouragement, from NEU, October 2015,2016,2017</li> -->
+    <section id="students">
+      <h2>Students</h2>
+      <div class="two-col">
+        <div>
+          <h3>Master's Students</h3>
+          <ul>
+            <li>2025: Huining Li</li>
+            <li>2026: Li Jiang, Yuanjun Ji</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Undergraduate Researchers</h3>
+          <ul>
+            <li>2022: Yifan Jia, Fan Yang, Ao Li, Jinghui Zhang</li>
+            <li>2023: Junru Song, Shijie Dong, Yichen Xu, Yimeng Hu, Ziwen Song, Yafang Guo</li>
+            <li>2024: Ruihan Li, Jiyang Tan, Zixun Diao, Bo'ao Wang, Jingchao Wang, Yao Lü</li>
+            <li>2025: Yinuo Wang, Yajing Zhu, Yiru Lü</li>
+          </ul>
+        </div>
+      </div>
+      <!-- <p><strong>Selected mentoring outcomes:</strong> first-author AAAI Oral, ACM Multimedia, ECCV, and Information Fusion papers; first, second, and third national prizes in the 2025 Global Campus AI Algorithm Elite Competition; three SDU undergraduate innovation projects, one provincial recommendation, and one SDU Young Scholars Seed Program project in 2026.</p> -->
+    </section>
 
-</p>
-</ul>
+    <section id="service">
+      <h2>Professional Service &amp; Awards</h2>
+      <div class="two-col">
+        <div>
+          <h3>Academic Service</h3>
+          <ul>
+            <li>Young Editorial Board Member, <em>Intelligence &amp; Robotics</em></li>
+            <li>Area Chair, ICLR 2025–2026</li>
+            <li>Area Chair, NeurIPS 2026</li>
+            <li>Reviewer: NeurIPS, ICLR, ICML, CVPR, ICCV, ECCV, AAAI, TNNLS, TCYB, and other venues</li>
+            <li>Member, China Computer Federation (CCF)</li>
+            <li>Committee Member, CIPS Large Models and Generative Intelligence Committee</li>
+            <li>Committee Member, CCF Multi-Agent Systems Group</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Selected Awards</h3>
+          <ul>
+            <li>ICML 2026 Silver Reviewer Award</li>
+            <li>Outstanding Instructor, Global Campus AI Algorithm Elite Competition</li>
+            <li>Second Prize, Young Faculty Teaching Competition, School of Software, Shandong University</li>
+            <li>Student Travel Grant, CIKM 2021</li>
+            <li>Yingcai First-Class Scholarship, Nanjing University, 2019–2022</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<h2><font face="Arial"> Work Experience </h2>
-	
-<ul style="list-style-type:none">
-<p style="line-height: 120%; margin-left: 0px; margin-top: 8pt; margin-bottom: 8pt;"> <font face="Arial" size="3">
-<li>[05/2020 - 10/2020]  Research Intern, Machine Learning Group, MSRA</li>
-</p>
-</ul>
+    <section id="experience">
+      <h2>Education &amp; Experience</h2>
+      <ul class="compact">
+        <li><strong>2025.02–present</strong> · Associate Researcher, Shandong University.</li>
+        <li><strong>2023.07–2025.02</strong> · Research Scientist, Beijing Institute for General Artificial Intelligence (BIGAI).</li>
+        <li><strong>2020.05–2020.10</strong> · Research Intern, Microsoft Research Asia.</li>
+        <li><strong>2018.09–2023.06</strong> · Ph.D. in Computer Science and Technology, Nanjing University.</li>
+        <li><strong>2014.10–2018.06</strong> · B.Eng. in Computer Science and Technology, Northeastern University.</li>
+      </ul>
+    </section>
 
-<h2><font face="Arial"> Professional Activities </font></h2>
-<ul style="list-style-type:none"> 
-	 <li> <p style="margin-left: 0px; line-height: 120%; margin-top: 8px; margin-bottom: 8px;"><font face="Arial" size="3"><meta charset="utf-8">
-         <strong> Journal Reviewer </strong> <br> </font> </p> 
-    
-    <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        IEEE Transactions on Neural Networks and Learning Systems (TNNLS) </p></li>
-    <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        Transactions on Machine Learning Research (TMLR) </p></li>	
-	 <li> <p style="margin-left: 0px; line-height: 120%; margin-top: 8px; margin-bottom: 8px;"><font face="Arial" size="3"><meta charset="utf-8">
-    <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        Knowledge-Based Systems </p></li>
-	 <li> <p style="margin-left: 0px; line-height: 120%; margin-top: 8px; margin-bottom: 8px;"><font face="Arial" size="3"><meta charset="utf-8">
-         <strong> Conference Reviewer </strong> <br> </font> </p> 
-   <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        The Conference on Neural Information Processing Systems (NeurIPS) 2024 </p></li>
-    <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        International Conference on Learning Representations (ICLR) 2024 </p></li>
-    <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        IEEE International Conference on Computer Vision (ICCV) 2023, 2021 </p></li>
-    <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        European Conference on Computer Vision (ECCV) 2024, 2022 </p></li>
-    <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022, 2023 </p></li>
-    <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        AAAI Conference on Artificial Intelligence (AAAI) 2022, 2023, 2024 </p></li>
-    <li> <p style="margin-left: 10px; line-height: 150%; margin-top: -6px; margin-bottom: -6px;">
-        ACM International Conference on Multimedia (ACM MM) 2021, 2023 </p></li>
-</ul>
-		
-
-<div id="footer">
-	<div id="footer-text"></div>
-</div>
-	<p></p><center>
-        <br>
-            © Yuntao Du | Last updated: 15/9/2024
-        </center><p></p>
-
-</b></b></b></div><b><b><b>
-
-</b></b></b></body></html>
+    <footer>
+      © 2026 Yuntao Du · Last updated: August 28, 2026
+    </footer>
+  </main>
+</body>
+</html>
